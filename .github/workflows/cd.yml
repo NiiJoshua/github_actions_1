@@ -1,0 +1,11 @@
+name: CD
+on:
+    push:
+        branches: [main]
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v5
+            - run: echo "Deploying version $(cat VERSION) ..."
+            - run: echo "In a real pipeline this would ship to Airflow / a warehouse / a server."
